@@ -14,7 +14,7 @@
 <meta property="og:url" content="http://yoursite.com/2016/12/06/curl/index.html">
 <meta property="og:site_name" content="谦与谦寻">
 <meta property="og:description" content="偶然一次机会，接触到了CURL 。第一反应是这货是啥，这货咋用。怎么辣么多参数，参数都是啥意思。经过一番折腾，发现这货其实也蛮可爱滴嘛。有些东西就是这样，你不接触，怎么知道它其实远没有你想的辣么复杂捏？来来来，奥特曼（Autumn）课堂开课啦~（敲黑板……注意听！）">
-<meta property="og:updated_time" content="2016-12-06T03:38:16.537Z">
+<meta property="og:updated_time" content="2016-12-06T03:53:52.742Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="curl的简单用法">
 <meta name="twitter:description" content="偶然一次机会，接触到了CURL 。第一反应是这货是啥，这货咋用。怎么辣么多参数，参数都是啥意思。经过一番折腾，发现这货其实也蛮可爱滴嘛。有些东西就是这样，你不接触，怎么知道它其实远没有你想的辣么复杂捏？来来来，奥特曼（Autumn）课堂开课啦~（敲黑板……注意听！）">
@@ -160,7 +160,7 @@
 <ul>
 <li>要访问的网页地址</li>
 </ul>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$url = <span class="string">"http://hf.ahzk365.com/index.php"</span>;</div></pre></td></tr></table></figure>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$url = <span class="string">"http://www.stu.com"</span>;</div></pre></td></tr></table></figure>
 <ul>
 <li>请求的参数中可能会有特殊符号，中文等，需要对其进行编码，编码的操作在<code>getCurl</code> 中已经执行</li>
 </ul>
@@ -206,12 +206,13 @@
 <figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">curl_setopt($curl, CURLOPT_FOLLOWLOCATION, <span class="number">1</span>);</div></pre></td></tr></table></figure>
 </li>
 <li><p><code>CURLOPT_TIMEOUT</code>: 设置一个长整形数，作为最大延续多少秒。</p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">curl_setopt($curl, CURLOPT_TIMEOUT, <span class="number">100</span>);</div></pre></td></tr></table></figure>
-</li>
-<li><p>CURLOPT_HEADER: 如果你想把一个头包含在输出中，设置这个选项为一个非零值。</p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">curl_setopt($curl, CURLOPT_HEADER, <span class="number">0</span>);</div><div class="line">curl_setopt($curl, CURLOPT_RETURNTRANSFER, <span class="number">1</span>);</div></pre></td></tr></table></figure>
 </li>
 </ol>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">curl_setopt($curl, CURLOPT_TIMEOUT, <span class="number">100</span>);</div></pre></td></tr></table></figure>
+<ol>
+<li>CURLOPT_HEADER: 如果你想把一个头包含在输出中，设置这个选项为一个非零值。</li>
+</ol>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">curl_setopt($curl, CURLOPT_HEADER, <span class="number">0</span>);</div><div class="line">curl_setopt($curl, CURLOPT_RETURNTRANSFER, <span class="number">1</span>);</div></pre></td></tr></table></figure>
 <p>好啦，本节课就到这里结束了~感兴趣的童鞋可以留言讨论，不感兴趣的可以留言提问。总之，还是希望你们留下一个小脚印。记得实践哦，实践出真知。好啦，废话不多说，下课~~~</p>
 
       
