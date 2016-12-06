@@ -153,60 +153,10 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <script src="/assets/js/APlayer.min.js"> </script><p>偶然一次机会，接触到了<code>CURL</code> 。第一反应是这货是啥，这货咋用。怎么辣么多参数，参数都是啥意思。经过一番折腾，发现这货其实也蛮可爱滴嘛。有些东西就是这样，你不接触，怎么知道它其实远没有你想的辣么复杂捏？来来来，奥特曼（<code>Autumn</code>）课堂开课啦<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">&lt;!-- more --&gt;</div><div class="line"></div><div class="line">* 要访问的网页地址</div><div class="line"></div><div class="line">~~~php</div><div class="line">$url = &quot;http://hf.ahzk365.com/index.php&quot;;</div></pre></td></tr></table></figure></p>
-<ul>
-<li>请求的参数中可能会有特殊符号，中文等，需要对其进行编码，编码的操作在<code>getCurl</code> 中已经执行</li>
-</ul>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$params = <span class="keyword">array</span>(</div><div class="line">	<span class="string">"r"</span>    =&gt; <span class="string">"stu/stuinfo"</span>,</div><div class="line">	<span class="string">"name"</span> =&gt; <span class="string">"Autumn"</span>,</div><div class="line">);</div></pre></td></tr></table></figure>
-<ul>
-<li>调用<code>getCurl</code>方法</li>
-</ul>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">getCurl($url, $params);</div></pre></td></tr></table></figure>
-<ul>
-<li>使用 <code>Curl</code> 执行 <code>GET</code> 请求</li>
-</ul>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"> * 使用 Curl 执行 GET 请求</div><div class="line"> * <span class="doctag">@param</span>  string  $url     请求的 URL</div><div class="line"> * <span class="doctag">@param</span>  array   $params  请求的参数</div><div class="line"> * <span class="doctag">@param</span>  integer $timeout 请求的超时</div><div class="line"> * <span class="doctag">@return</span> string           请求响应的结果</div><div class="line"> */</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">getCurl</span><span class="params">($url, $params, $timeout = <span class="number">5</span>)</span> </span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">if</span>($url == <span class="string">""</span> || $timeout &lt;= <span class="number">0</span>) </div><div class="line">    &#123;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">false</span>;</div><div class="line">    &#125;</div><div class="line">    $url = $url.<span class="string">'?'</span>.http_build_query($params);</div><div class="line">    <span class="comment">//初始化</span></div><div class="line">    $con = curl_init((string)$url);</div><div class="line">    <span class="comment">//设置选项，包括URL</span></div><div class="line">    curl_setopt($con, CURLOPT_HEADER, <span class="keyword">false</span>);</div><div class="line">    curl_setopt($con, CURLOPT_RETURNTRANSFER,<span class="keyword">true</span>);</div><div class="line">    curl_setopt($con, CURLOPT_TIMEOUT, (int)$timeout);</div><div class="line">    <span class="comment">//执行并获取HTML文档内容</span></div><div class="line">    $result = curl_exec($con);</div><div class="line">    <span class="comment">//释放curl句柄</span></div><div class="line">    curl_close($con);</div><div class="line">    <span class="comment">//打印获得的数据</span></div><div class="line">    <span class="keyword">echo</span> $result;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>当当当当~~哎呦，怎么辣么快就下课啦，奥特曼（<code>Autumn</code>）老师还没有讲完呢可咋整。嗯哼，就我就拖堂几分钟，很快的，补充一下小知识点。（敲黑板……很重要，注意听！）</p>
-<ul>
-<li>课堂小知识点</li>
-</ul>
-<ol>
-<li><p><code>CURLOPT_URL</code>: 这是你想用<code>PHP</code>取回的<code>URL</code>地址。你也可以在用<code>curl_init()</code>函数初始化时设置这个选项。</p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">curl_setopt($curl, CURLOPT_URL, $url);</div></pre></td></tr></table></figure>
-</li>
-<li><p><code>CURLOPT_USERAGENT</code>: 在<code>HTTP</code>请求中包含一个<code>&#39;user-agent&#39;</code>头的字符串。 </p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">curl_setopt($curl, CURLOPT_USERAGENT, $_SERVER[<span class="string">'HTTP_USER_AGENT'</span>]);</div></pre></td></tr></table></figure>
-</li>
-<li><p><code>CURLOPT_REFERER</code>: 在<code>HTTP</code>请求中包含一个<code>&#39;referer&#39;</code>头的字符串。 </p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">curl_setopt($curl, CURLOPT_REFERER, $referer);</div></pre></td></tr></table></figure>
-</li>
-<li><p><code>CURLOPT_REFERER</code>: 在<code>HTTP</code>请求中不包含一个<code>&#39;referer&#39;</code>头的字符串。</p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">curl_setopt($curl, CURLOPT_AUTOREFERER, <span class="number">1</span>);</div></pre></td></tr></table></figure>
-</li>
-<li><p><code>CURLOPT_POST</code>: 如果你想<code>PHP</code>去做一个正规的<code>HTTP POST</code>，设置这个选项为一个非零值。这个<code>POST</code>是普通的 <code>application/x-www-from-urlencoded</code> 类型，多数被<code>HTML</code>表单使用。</p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">curl_setopt($curl, CURLOPT_POST, <span class="number">1</span>);</div></pre></td></tr></table></figure>
-</li>
-<li><p><code>CURLOPT_POSTFIELDS</code>: 传递一个作为<code>HTTP &#39;POST&#39;</code>操作的所有数据的字符串。</p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">curl_setopt($curl, CURLOPT_POSTFIELDS, $post);</div></pre></td></tr></table></figure>
-</li>
-<li><p><code>CURLOPT_COOKIE</code>: 传递一个包含<code>HTTP cookie</code>的头连接。</p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">curl_setopt($curl, CURLOPT_COOKIE, $cookie);</div><div class="line">curl_setopt($curl, CURLOPT_COOKIEJAR, $cookiepath);</div></pre></td></tr></table></figure>
-</li>
-<li><p><code>CURLOPT_COOKIEFILE</code>: 传递一个包含<code>cookie</code>数据的文件的名字的字符串。这个<code>cookie</code>文件可以是<code>Netscape</code>格式，或是堆存在文件中的<code>HTTP</code>风格的头。</p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">curl_setopt($curl, CURLOPT_COOKIEFILE, $cookiepath);</div></pre></td></tr></table></figure>
-</li>
-<li><p><code>CURLOPT_FOLLOWLOCATION</code>: 设置这个选项为一个非零值(象<code>&#39;Location:&#39;</code>)的头，服务器会把它当做<code>HTTP</code>头的一部分发送(注意这是递归的，<code>PHP</code>将发送形如<code>&#39;Location: &#39;</code>的头)。</p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">curl_setopt($curl, CURLOPT_FOLLOWLOCATION, <span class="number">1</span>);</div></pre></td></tr></table></figure>
-</li>
-<li><p><code>CURLOPT_TIMEOUT</code>: 设置一个长整形数，作为最大延续多少秒。</p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">curl_setopt($curl, CURLOPT_TIMEOUT, <span class="number">100</span>);</div></pre></td></tr></table></figure>
-</li>
-<li><p>CURLOPT_HEADER: 如果你想把一个头包含在输出中，设置这个选项为一个非零值。</p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">curl_setopt($curl, CURLOPT_HEADER, <span class="number">0</span>);</div><div class="line">curl_setopt($curl, CURLOPT_RETURNTRANSFER, <span class="number">1</span>);</div></pre></td></tr></table></figure>
-</li>
-</ol>
-<p>好啦，本节课就到这里结束了~感兴趣的童鞋可以留言讨论，不感兴趣的可以留言提问。总之，还是希望你们留下一个小脚印。记得实践哦，实践出真知。好啦，废话不多说，下课~~~</p>
-
+        <p>偶然一次机会，接触到了<code>CURL</code> 。第一反应是这货是啥，这货咋用。怎么辣么多参数，参数都是啥意思。经过一番折腾，发现这货其实也蛮可爱滴嘛。有些东西就是这样，你不接触，怎么知道它其实远没有你想的辣么复杂捏？来来来，奥特曼（<code>Autumn</code>）课堂开课啦~（敲黑板……注意听！）</p>
+        <p class="article-more-link">
+          <a class="article-more-a"  href="/2016/12/06/curl/#more">more >></a>
+        </p>
       
     </div>
     <div class="article-info article-info-index">
