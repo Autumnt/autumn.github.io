@@ -14,10 +14,12 @@
 <meta property="og:url" content="http://yoursite.com/2016/12/06/curl/index.html">
 <meta property="og:site_name" content="谦与谦寻">
 <meta property="og:description" content="偶然一次机会，接触到了CURL 。第一反应是这货是啥，这货咋用。怎么辣么多参数，参数都是啥意思。经过一番折腾，发现这货其实也蛮可爱滴嘛。有些东西就是这样，你不接触，怎么知道它其实远没有你想的辣么复杂捏？来来来，奥特曼（Autumn）课堂开课啦~（敲黑板……注意听！）">
-<meta property="og:updated_time" content="2016-12-06T06:33:29.078Z">
+<meta property="og:image" content="http://yoursite.com/img/curl.jpg">
+<meta property="og:updated_time" content="2016-12-06T06:45:28.700Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="curl的简单用法">
 <meta name="twitter:description" content="偶然一次机会，接触到了CURL 。第一反应是这货是啥，这货咋用。怎么辣么多参数，参数都是啥意思。经过一番折腾，发现这货其实也蛮可爱滴嘛。有些东西就是这样，你不接触，怎么知道它其实远没有你想的辣么复杂捏？来来来，奥特曼（Autumn）课堂开课啦~（敲黑板……注意听！）">
+<meta name="twitter:image" content="http://yoursite.com/img/curl.jpg">
   
     <link rel="alternative" href="/atom.xml" title="谦与谦寻" type="application/atom+xml">
   
@@ -173,6 +175,11 @@
 <li>使用 <code>Curl</code> 执行 <code>GET</code> 请求</li>
 </ul>
 <figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"> * 使用 Curl 执行 GET 请求</div><div class="line"> * <span class="doctag">@param</span>  string  $url     请求的 URL</div><div class="line"> * <span class="doctag">@param</span>  array   $params  请求的参数</div><div class="line"> * <span class="doctag">@param</span>  integer $timeout 请求的超时</div><div class="line"> * <span class="doctag">@return</span> string           请求响应的结果</div><div class="line"> */</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">getCurl</span><span class="params">($url, $params, $timeout = <span class="number">5</span>)</span> </span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">if</span>($url == <span class="string">""</span> || $timeout &lt;= <span class="number">0</span>) </div><div class="line">    &#123;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">false</span>;</div><div class="line">    &#125;</div><div class="line">    $url = $url.<span class="string">'?'</span>.http_build_query($params);</div><div class="line">    <span class="comment">//初始化</span></div><div class="line">    $con = curl_init((string)$url);</div><div class="line">    <span class="comment">//设置选项，包括URL</span></div><div class="line">    curl_setopt($con, CURLOPT_HEADER, <span class="keyword">false</span>);</div><div class="line">    curl_setopt($con, CURLOPT_RETURNTRANSFER,<span class="keyword">true</span>);</div><div class="line">    curl_setopt($con, CURLOPT_TIMEOUT, (int)$timeout);</div><div class="line">    <span class="comment">//执行并获取HTML文档内容</span></div><div class="line">    $result = curl_exec($con);</div><div class="line">    <span class="comment">//释放curl句柄</span></div><div class="line">    curl_close($con);</div><div class="line">    <span class="comment">//打印获得的数据</span></div><div class="line">    <span class="keyword">echo</span> $result;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<ul>
+<li><p>效果展示</p>
+<p><img src="/img/curl.jpg" alt=""></p>
+</li>
+</ul>
 <p>当当当当~~哎呦，怎么辣么快就下课啦，奥特曼（<code>Autumn</code>）老师还没有讲完呢可咋整。嗯哼，那我就拖堂几分钟，很快的，补充一下小知识点。（敲黑板……很重要，注意听！）</p>
 <ul>
 <li>课堂小知识点</li>
