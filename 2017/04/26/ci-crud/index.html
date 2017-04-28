@@ -8,16 +8,16 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>CI框架之--增删改查 | 谦与谦寻</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="闲暇之余，研究了一下CI框架的使用，一个说简单不简单，说复杂又不复杂的尴尬框架。由于之前一直接触和使用TP框架和YII2框架，对于CI的上手，还是折腾了半天，官方文档真的是相当简洁啊，简言之，算是有点小眉目，遂写下，已记之。常言道：好记性不如烂笔头！（咳、咳、对于TP和YII为啥没写，我认为，主要是因为懒）">
+  <meta name="description" content="闲暇之余，研究了一下CI框架的使用，一个说简单不简单，说复杂又不复杂的尴尬框架。由于之前一直接触和使用TP框架和YII2框架，对于CI的上手，还是折腾了半天，官方文档真的是相当简洁啊，简言之，算是有点小眉目，遂写下，已记之。常言道：好记性不如烂笔头！（咳、咳、对于TP和YII为啥没写，我认为，主要原因是因为懒）">
 <meta property="og:type" content="article">
 <meta property="og:title" content="CI框架之--增删改查">
 <meta property="og:url" content="http://yoursite.com/2017/04/26/ci-crud/index.html">
 <meta property="og:site_name" content="谦与谦寻">
-<meta property="og:description" content="闲暇之余，研究了一下CI框架的使用，一个说简单不简单，说复杂又不复杂的尴尬框架。由于之前一直接触和使用TP框架和YII2框架，对于CI的上手，还是折腾了半天，官方文档真的是相当简洁啊，简言之，算是有点小眉目，遂写下，已记之。常言道：好记性不如烂笔头！（咳、咳、对于TP和YII为啥没写，我认为，主要是因为懒）">
-<meta property="og:updated_time" content="2017-04-26T03:52:42.859Z">
+<meta property="og:description" content="闲暇之余，研究了一下CI框架的使用，一个说简单不简单，说复杂又不复杂的尴尬框架。由于之前一直接触和使用TP框架和YII2框架，对于CI的上手，还是折腾了半天，官方文档真的是相当简洁啊，简言之，算是有点小眉目，遂写下，已记之。常言道：好记性不如烂笔头！（咳、咳、对于TP和YII为啥没写，我认为，主要原因是因为懒）">
+<meta property="og:updated_time" content="2017-04-27T09:45:01.094Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CI框架之--增删改查">
-<meta name="twitter:description" content="闲暇之余，研究了一下CI框架的使用，一个说简单不简单，说复杂又不复杂的尴尬框架。由于之前一直接触和使用TP框架和YII2框架，对于CI的上手，还是折腾了半天，官方文档真的是相当简洁啊，简言之，算是有点小眉目，遂写下，已记之。常言道：好记性不如烂笔头！（咳、咳、对于TP和YII为啥没写，我认为，主要是因为懒）">
+<meta name="twitter:description" content="闲暇之余，研究了一下CI框架的使用，一个说简单不简单，说复杂又不复杂的尴尬框架。由于之前一直接触和使用TP框架和YII2框架，对于CI的上手，还是折腾了半天，官方文档真的是相当简洁啊，简言之，算是有点小眉目，遂写下，已记之。常言道：好记性不如烂笔头！（咳、咳、对于TP和YII为啥没写，我认为，主要原因是因为懒）">
   
     <link rel="alternative" href="/atom.xml" title="谦与谦寻" type="application/atom+xml">
   
@@ -155,8 +155,35 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <script src="/assets/js/APlayer.min.js"> </script><p>闲暇之余，研究了一下CI框架的使用，一个说简单不简单，说复杂又不复杂的尴尬框架。由于之前一直接触和使用TP框架和YII2框架，对于CI的上手，还是折腾了半天，官方文档真的是相当简洁啊，简言之，算是有点小眉目，遂写下，已记之。常言道：好记性不如烂笔头！（咳、咳、对于TP和YII为啥没写，我认为，主要是因为懒）</p>
+        <script src="/assets/js/APlayer.min.js"> </script><p>闲暇之余，研究了一下CI框架的使用，一个说简单不简单，说复杂又不复杂的尴尬框架。由于之前一直接触和使用TP框架和YII2框架，对于CI的上手，还是折腾了半天，官方文档真的是相当简洁啊，简言之，算是有点小眉目，遂写下，已记之。常言道：好记性不如烂笔头！（咳、咳、对于TP和YII为啥没写，我认为，主要原因是因为懒）</p>
 <a id="more"></a>
+<ul>
+<li>在查询数据库之前，我们要先创建一个数据库表。连接你的数据库，运行下面的 SQL 语句（MySQL），并添加一些测试数据。确保你的数据库配置正确。</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">CREATE TABLE `user` (</div><div class="line">  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,</div><div class="line">  `name` varchar(255) CHARACTER SET utf8 NOT NULL,</div><div class="line">  `sex` enum(&apos;2&apos;,&apos;1&apos;) NOT NULL DEFAULT &apos;1&apos;,</div><div class="line">  PRIMARY KEY (`id`)</div><div class="line">) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;</div></pre></td></tr></table></figure>
+<ul>
+<li><p>打开你<code>models</code>所在的目录，新建一个文件<code>User_model.php</code> 。</p>
+</li>
+<li><p>打开你<code>controllers</code>所在的目录，新建一个文件<code>User.php</code> 。</p>
+</li>
+<li><p>打开你<code>view</code>所在的目录，新建文件<code>index.php</code> ，<code>edit.php</code> ，<code>create.php</code>。</p>
+</li>
+<li><p>OK，准备工作已经就绪，开始撸代码了，哇卡卡，有点激动啊n(<em>≧▽≦</em>)n</p>
+</li>
+<li><p>查询数据</p>
+<ul>
+<li><p>在<code>User_model</code> 中写入下面的代码</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line">    * 查询学生数据</div><div class="line">    * <span class="doctag">@param</span>  boolean $slug [description]</div><div class="line">    * <span class="doctag">@return</span> [type]        [description]</div><div class="line">    */</div><div class="line">   <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">get_user</span><span class="params">($slug = FALSE)</span></span></div><div class="line">   &#123;</div><div class="line">   	<span class="keyword">if</span> ($slug === <span class="keyword">FALSE</span>) </div><div class="line">   	&#123;</div><div class="line">   		$query = <span class="keyword">$this</span>-&gt;db-&gt;get(<span class="string">'user'</span>);</div><div class="line">   		<span class="keyword">return</span> $query-&gt;result_array();</div><div class="line">   	&#125;</div><div class="line"></div><div class="line">   	$query = <span class="keyword">$this</span>-&gt;db-&gt;get_where(<span class="string">'user'</span>, $slug);</div><div class="line">   	<span class="keyword">return</span> $query-&gt;row_array();</div><div class="line">   &#125;</div></pre></td></tr></table></figure>
+<p>​</p>
+</li>
+<li><p>在<code>User</code> 中写入下面的代码</p>
+</li>
+<li><p>在<code>user_model</code> 中写入下面的代码</p>
+</li>
+</ul>
+</li>
+</ul>
+
       
     </div>
     <div class="article-info article-info-index">
