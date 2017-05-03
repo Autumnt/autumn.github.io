@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <link rel="dns-prefetch" href="http://yoursite.com">
+  <title>常用的PHP函数小总结 | 谦与谦寻</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="啦啦啦啦~转眼又到了周一，精神抖擞的一早上，怎么能不分享一篇干货。有时候，明明是一些PHP的常见的函数，当我在想要用的时候，函数就在嘴边，却怎么都想不起来。很尴尬，有木有。今天就把它记下来，让自己再熟悉一遍，也加深一下印象。So…就是辣么任性，怎么整！">
+<meta property="og:type" content="article">
+<meta property="og:title" content="常用的PHP函数小总结">
+<meta property="og:url" content="http://yoursite.com/2016/12/12/funs/index.html">
+<meta property="og:site_name" content="谦与谦寻">
+<meta property="og:description" content="啦啦啦啦~转眼又到了周一，精神抖擞的一早上，怎么能不分享一篇干货。有时候，明明是一些PHP的常见的函数，当我在想要用的时候，函数就在嘴边，却怎么都想不起来。很尴尬，有木有。今天就把它记下来，让自己再熟悉一遍，也加深一下印象。So…就是辣么任性，怎么整！">
+<meta property="og:updated_time" content="2016-12-12T09:27:34.774Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="常用的PHP函数小总结">
+<meta name="twitter:description" content="啦啦啦啦~转眼又到了周一，精神抖擞的一早上，怎么能不分享一篇干货。有时候，明明是一些PHP的常见的函数，当我在想要用的时候，函数就在嘴边，却怎么都想不起来。很尴尬，有木有。今天就把它记下来，让自己再熟悉一遍，也加深一下印象。So…就是辣么任性，怎么整！">
+  
+    <link rel="alternative" href="/atom.xml" title="谦与谦寻" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/main.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div class="left-col">
+      <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img src="http://tvax1.sinaimg.cn/crop.0.0.751.751.180/005WYdkjly8fe0ps5g3cqj30kv0kv75v.jpg" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">Autumn</a></h1>
+		</hgroup>
+
+		
+
+		<nav class="header-menu">
+			<ul>
+			
+				<li><a href="/">你看书还是看我</a></li>
+	        
+				<li><a href="/">眼神里求知欲多</a></li>
+	        
+				<li><a href="/">主页</a></li>
+	        
+			</ul>
+		</nav>
+		<nav class="header-smart-menu">
+	        
+    		
+    			
+    			<a class="js-smart-menu" data-idx="0" href="javascript:void(0)">所有文章</a>
+    			
+    			
+            
+    			
+    			<a class="js-smart-menu" data-idx="1" href="javascript:void(0)">标签</a>
+    			
+    			
+            
+    			
+    			<a class="js-smart-menu" data-idx="2" href="javascript:void(0)">友链</a>
+    			
+    			
+            
+    			
+    			<a class="js-smart-menu" data-idx="3" href="javascript:void(0)">关于我</a>
+    			
+    			
+            
+		</nav>
+		<nav class="header-nav">
+			<div class="social">
+				
+					<a class="github" target="_blank" href="https://github.com/Autumnt" title="github">github</a>
+		        
+					<a class="weibo" target="_blank" href="http://weibo.com/p/1005055452042559" title="weibo">weibo</a>
+		        
+					<a class="mail" target="_blank" href="/913649778@qq.com" title="mail">mail</a>
+		        
+			</div>
+		</nav>
+	</header>		
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"><i class="icon-list"></i></div>
+  		<h1 class="header-author js-mobile-header hide">Autumn</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				
+					<img src="http://tvax1.sinaimg.cn/crop.0.0.751.751.180/005WYdkjly8fe0ps5g3cqj30kv0kv75v.jpg" class="js-avatar">
+				
+			</div>
+			<hgroup>
+			  <h1 class="header-author">Autumn</h1>
+			</hgroup>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">你看书还是看我</a></li>
+		        
+					<li><a href="/">眼神里求知欲多</a></li>
+		        
+					<li><a href="/">主页</a></li>
+		        
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/Autumnt" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="http://weibo.com/p/1005055452042559" title="weibo">weibo</a>
+			        
+						<a class="mail" target="_blank" href="/913649778@qq.com" title="mail">mail</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+      <div class="body-wrap">
+        <article id="post-funs" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      常用的PHP函数小总结
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <script src="/assets/js/APlayer.min.js"> </script><p>啦啦啦啦~转眼又到了周一，精神抖擞的一早上，怎么能不分享一篇干货。有时候，明明是一些<code>PHP</code>的常见的函数，当我在想要用的时候，函数就在嘴边，却怎么都想不起来。很尴尬，有木有。今天就把它记下来，让自己再熟悉一遍，也加深一下印象。<code>So</code>…就是辣么任性，怎么整！</p>
+<a id="more"></a>
+<ul>
+<li><p><code>count</code> ：统计数组元素个数</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$arr = <span class="keyword">array</span>(<span class="string">'后裔'</span>,<span class="string">'妲己'</span>,<span class="string">'赵云'</span>,<span class="string">'亚瑟'</span>,<span class="string">'狄仁杰'</span>,<span class="string">'夏侯惇'</span>);</div><div class="line"><span class="keyword">echo</span> count($arr);</div></pre></td></tr></table></figure>
+<p>输出结果：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="number">6</span></div></pre></td></tr></table></figure>
+</li>
+<li><p><code>strlen</code>：统计字符串长度</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$str = <span class="string">'wangzherongyaozhixihuanhouyikezazheng'</span>;</div><div class="line"><span class="keyword">echo</span> strlen($str);</div></pre></td></tr></table></figure>
+<p>输出结果：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="number">37</span></div></pre></td></tr></table></figure>
+</li>
+<li><p><code>array_slice</code>：从数组中取出部分元素</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$array = <span class="keyword">array</span>(<span class="string">'a'</span>=&gt;<span class="string">'赵云'</span>,<span class="string">'b'</span>=&gt;<span class="string">'妲己'</span>,<span class="string">'c'</span>=&gt;<span class="string">'后裔'</span>,<span class="string">'d'</span>=&gt;<span class="string">'亚瑟'</span>,<span class="string">'e'</span>=&gt;<span class="string">'狄仁杰'</span>,<span class="string">'f'</span>=&gt;<span class="string">'关羽'</span>,<span class="string">'g'</span>=&gt;<span class="string">'夏侯惇'</span>);</div><div class="line">$arr = array_slice($array,<span class="number">1</span>,<span class="number">3</span>);<span class="comment">//从第几个取，取几个</span></div><div class="line">print_r($arr);</div></pre></td></tr></table></figure>
+<p>输出结果：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">Array</span></div><div class="line">(</div><div class="line">    [b] =&gt; 妲己</div><div class="line">    [c] =&gt; 后裔</div><div class="line">    [d] =&gt; 亚瑟</div><div class="line">)</div></pre></td></tr></table></figure>
+<p>​</p>
+</li>
+<li><p><code>array_splice</code>：把数组中的几个元素，用另一个数组替换</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">$arr = <span class="keyword">array</span>(<span class="string">'朱元璋'</span>,<span class="string">'李煜'</span>,<span class="string">'商鞅'</span>,<span class="string">'项羽'</span>);</div><div class="line">$brr = <span class="keyword">array</span>(<span class="string">'李师师'</span>,<span class="string">'虞姬'</span>,<span class="string">'杨玉环'</span>);</div><div class="line">$crr = array_splice($arr,<span class="number">2</span>,<span class="number">3</span>,$brr);<span class="comment">//从第几个换，换掉几个；</span></div><div class="line"><span class="comment">//换掉0个，即为添加元素；</span></div><div class="line">print_r($arr);<span class="comment">//被替换后的元素</span></div><div class="line"><span class="comment">//用空数组换，即为删除元素；</span></div><div class="line">print_r($crr);<span class="comment">//替换下来的元素</span></div></pre></td></tr></table></figure>
+<p>输出结果：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//被替换后的元素</span></div><div class="line"><span class="keyword">Array</span></div><div class="line">(</div><div class="line">    [<span class="number">0</span>] =&gt; 朱元璋</div><div class="line">    [<span class="number">1</span>] =&gt; 李煜</div><div class="line">    [<span class="number">2</span>] =&gt; 李师师</div><div class="line">    [<span class="number">3</span>] =&gt; 虞姬</div><div class="line">    [<span class="number">4</span>] =&gt; 杨玉环</div><div class="line">)</div><div class="line"><span class="comment">//替换下来的元素</span></div><div class="line"><span class="keyword">Array</span></div><div class="line">(</div><div class="line">    [<span class="number">0</span>] =&gt; 商鞅</div><div class="line">    [<span class="number">1</span>] =&gt; 项羽</div><div class="line">)</div></pre></td></tr></table></figure>
+</li>
+<li><p><code>array_search</code>：查找元素，返回下标</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$arr = <span class="keyword">array</span>(<span class="string">'WLH'</span>,<span class="string">'xzq'</span>,<span class="string">'xs'</span>,<span class="string">'ZD'</span>,<span class="string">'HG'</span>);</div><div class="line"><span class="keyword">echo</span> array_search(<span class="string">'ZD'</span>,$arr);</div></pre></td></tr></table></figure>
+<p>输出结果：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="number">3</span></div></pre></td></tr></table></figure>
+</li>
+<li><p><code>in_array</code>：查找元素，是否存在数组中</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$arr = <span class="keyword">array</span>(<span class="string">'lamp'</span>,<span class="string">'php'</span>,<span class="string">'xdl'</span>,<span class="string">'mysql'</span>);</div><div class="line">var_dump(in_array(<span class="string">'php'</span>,$arr));</div></pre></td></tr></table></figure>
+<p>输出结果：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">bool(<span class="keyword">true</span>)</div></pre></td></tr></table></figure>
+</li>
+<li><p><code>array_unique</code>：移除数组中重复的元素</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$arr = <span class="keyword">array</span>(<span class="string">'hehe'</span>,<span class="string">'xixi'</span>,<span class="string">'hehe'</span>,<span class="string">'haha'</span>,<span class="string">'gege'</span>,<span class="string">'gege'</span>);</div><div class="line">$brr = array_unique($arr);<span class="comment">//还是原数组的下标不变</span></div><div class="line">print_r($brr);</div></pre></td></tr></table></figure>
+<p>输出结果：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">Array</span></div><div class="line">(</div><div class="line">    [<span class="number">0</span>] =&gt; hehe</div><div class="line">    [<span class="number">1</span>] =&gt; xixi</div><div class="line">    [<span class="number">3</span>] =&gt; haha</div><div class="line">    [<span class="number">4</span>] =&gt; gege</div><div class="line">)</div></pre></td></tr></table></figure>
+</li>
+<li><p><code>array_key_exists</code>：下标是否存在指定数组中</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$arr = <span class="keyword">array</span>(<span class="string">'a'</span>=&gt;<span class="string">'苹果'</span>,<span class="string">'b'</span>=&gt;<span class="string">'火龙果'</span>,<span class="string">'c'</span>=&gt;<span class="string">'草莓'</span>);</div><div class="line">var_dump(array_key_exists(<span class="string">'s'</span>,$arr));</div></pre></td></tr></table></figure>
+<p>输出结果：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">bool(<span class="keyword">false</span>)</div></pre></td></tr></table></figure>
+</li>
+<li><p><code>array_unshift</code>：在数组的开头插入一个或多个单元</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$arr = <span class="keyword">array</span>(<span class="string">'一次就好'</span>,<span class="string">'让我心动的人'</span>,<span class="string">'冻结'</span>);</div><div class="line">array_unshift($arr,<span class="string">'你不像她'</span>,<span class="string">'遗憾'</span>);</div><div class="line">print_r($arr);</div></pre></td></tr></table></figure>
+<p>输出结果：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">Array</span></div><div class="line">(</div><div class="line">    [<span class="number">0</span>] =&gt; 你不像她</div><div class="line">    [<span class="number">1</span>] =&gt; 遗憾</div><div class="line">    [<span class="number">2</span>] =&gt; 一次就好</div><div class="line">    [<span class="number">3</span>] =&gt; 让我心动的人</div><div class="line">    [<span class="number">4</span>] =&gt; 冻结</div><div class="line">)</div></pre></td></tr></table></figure>
+</li>
+<li><p><code>array_shift</code>：将数组开头的单元移出数组</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$arr = <span class="keyword">array</span>(<span class="string">'自由自在'</span>,<span class="string">'0'</span>=&gt;<span class="string">'吵吵闹闹'</span>,<span class="string">'天涯海角'</span>,<span class="string">'停止寻找'</span>,<span class="string">'慢慢变老'</span>);</div><div class="line">array_shift($arr);<span class="comment">//数字下标从0开始</span></div><div class="line">print_r($arr);</div></pre></td></tr></table></figure>
+<p>输出结果：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">Array</span></div><div class="line">(</div><div class="line">    [<span class="number">0</span>] =&gt; 天涯海角</div><div class="line">    [<span class="number">1</span>] =&gt; 停止寻找</div><div class="line">    [<span class="number">2</span>] =&gt; 慢慢变老</div><div class="line">)</div></pre></td></tr></table></figure>
+</li>
+<li><p><code>array_push</code>：在数组最后插入一个或多个单元（入栈）</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$arr = <span class="keyword">array</span>(<span class="string">'橘子'</span>,<span class="string">'橙子'</span>,<span class="string">'柚子'</span>,<span class="string">'柠檬'</span>);</div><div class="line">array_push($arr,<span class="string">'array'</span>,<span class="string">'push'</span>,<span class="string">'print'</span>);</div><div class="line">$arr[] = <span class="string">'hehe'</span>;<span class="comment">//相当于入栈，好处是没有调用函数的额外负担</span></div><div class="line">print_r($arr);</div></pre></td></tr></table></figure>
+<p>输出结果：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">Array</span></div><div class="line">(</div><div class="line">    [<span class="number">0</span>] =&gt; 橘子</div><div class="line">    [<span class="number">1</span>] =&gt; 橙子</div><div class="line">    [<span class="number">2</span>] =&gt; 柚子</div><div class="line">    [<span class="number">3</span>] =&gt; 柠檬</div><div class="line">    [<span class="number">4</span>] =&gt; <span class="keyword">array</span></div><div class="line">    [<span class="number">5</span>] =&gt; push</div><div class="line">    [<span class="number">6</span>] =&gt; <span class="keyword">print</span></div><div class="line">    [<span class="number">7</span>] =&gt; hehe</div><div class="line">)</div></pre></td></tr></table></figure>
+</li>
+<li><p><code>array_pop</code>：将数组的最后一个单元弹出（出栈）</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$arr = <span class="keyword">array</span>(<span class="string">'push'</span>,<span class="string">'入栈'</span>,<span class="string">'pop'</span>,<span class="string">'出栈'</span>,<span class="string">'array'</span>);</div><div class="line">array_pop($arr);</div><div class="line">print_r($arr);</div></pre></td></tr></table></figure>
+<p>输出结果：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">Array</span></div><div class="line">(</div><div class="line">    [<span class="number">0</span>] =&gt; push</div><div class="line">    [<span class="number">1</span>] =&gt; 入栈</div><div class="line">    [<span class="number">2</span>] =&gt; pop</div><div class="line">    [<span class="number">3</span>] =&gt; 出栈</div><div class="line">)</div></pre></td></tr></table></figure>
+</li>
+<li><p><code>array_rand</code>：从数组中随机取出一个或多个单元</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$arr = <span class="keyword">array</span>(<span class="string">'水仙'</span>=&gt;<span class="string">'shuixian'</span>,<span class="string">'仙人掌'</span>=&gt;<span class="string">'xianrenzhang'</span>,<span class="string">'樱花'</span>=&gt;<span class="string">'yinghua'</span>,<span class="string">'雪莲花'</span>=&gt;<span class="string">'xuelianhua'</span>);</div><div class="line">$brr = array_rand($arr,<span class="number">2</span>);<span class="comment">//随机取两个下标</span></div><div class="line">print_r($brr);</div></pre></td></tr></table></figure>
+<p>输出结果：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">Array</span></div><div class="line">(</div><div class="line">    [<span class="number">0</span>] =&gt; 仙人掌</div><div class="line">    [<span class="number">1</span>] =&gt; 樱花</div><div class="line">)</div></pre></td></tr></table></figure>
+</li>
+<li><p><code>asort</code>：对数组值排序，保持索引关系</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$arr = <span class="keyword">array</span>(<span class="string">'0'</span>=&gt;<span class="string">'55'</span>,<span class="string">'1'</span>=&gt;<span class="string">'22'</span>,<span class="string">'2'</span>=&gt;<span class="string">'44'</span>,<span class="string">'3'</span>=&gt;<span class="string">'88'</span>);</div><div class="line">asort($arr);</div><div class="line">print_r($arr);</div></pre></td></tr></table></figure>
+<p>输出结果：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">Array</span></div><div class="line">(</div><div class="line">    [<span class="number">1</span>] =&gt; <span class="number">22</span></div><div class="line">    [<span class="number">2</span>] =&gt; <span class="number">44</span></div><div class="line">    [<span class="number">0</span>] =&gt; <span class="number">55</span></div><div class="line">    [<span class="number">3</span>] =&gt; <span class="number">88</span></div><div class="line">)</div></pre></td></tr></table></figure>
+</li>
+<li><p><code>trim</code>：去除字符串首尾处指定字符</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">$str = <span class="string">'  周日被我射熄火了，所以今天是周一  '</span>;</div><div class="line"><span class="keyword">echo</span> $str.<span class="string">'后裔'</span>;</div><div class="line">$aa = trim($str);<span class="comment">//去除首尾空白</span></div><div class="line"><span class="keyword">echo</span> $aa.<span class="string">'后裔'</span>;</div><div class="line">$aa = rtrim($str);<span class="comment">//清除右边的空白</span></div><div class="line"><span class="keyword">echo</span> $aa.<span class="string">'后裔'</span>;</div></pre></td></tr></table></figure>
+<p>输出结果：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">  周日被我射熄火了，所以今天是周一  后裔</div><div class="line">周日被我射熄火了，所以今天是周一后裔</div><div class="line">  周日被我射熄火了，所以今天是周一后裔</div></pre></td></tr></table></figure>
+</li>
+<li><p><code>pathinfo</code>：返回文件路径信息</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">echo</span> pathinfo(<span class="string">'aa/bb/cc/hehe.php'</span>,PATHINFO_BASENAME);<span class="comment">// hehe.php</span></div><div class="line"><span class="keyword">echo</span> pathinfo(<span class="string">'aa/bb/cc/hehe.php'</span>,PATHINFO_FILENAME);<span class="comment">// hehe</span></div><div class="line"><span class="keyword">echo</span> pathinfo(<span class="string">'aa/bb/cc/hehe.php'</span>,PATHINFO_EXTENSION);<span class="comment">// php</span></div><div class="line"><span class="keyword">echo</span> pathinfo(<span class="string">'aa/bb/cc/hehe.php'</span>,PATHINFO_DIRNAME);<span class="comment">// aa/bb/cc</span></div></pre></td></tr></table></figure>
+<p>输出结果：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">hehe.php</div><div class="line">hehe</div><div class="line">php</div><div class="line">aa/bb/cc</div></pre></td></tr></table></figure>
+</li>
+<li><p><code>dirname</code>：返回路径中的目录部分</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">echo</span> dirname(<span class="string">'C:/testweb/home.php'</span>);<span class="comment">// C:/testweb</span></div><div class="line"><span class="keyword">echo</span> dirname(<span class="string">'D:/aa/bb/cc/'</span>);<span class="comment">//返回父目录</span></div></pre></td></tr></table></figure>
+<p>输出结果：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">C:/testweb</div><div class="line">D:/aa/bb</div></pre></td></tr></table></figure>
+</li>
+<li><p><code>str_pad</code>：使用另一个字符串填充字符串为指定长度</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$str = <span class="string">'hehenihao'</span>;</div><div class="line"><span class="keyword">echo</span> $aa = str_pad($str,<span class="number">18</span>,<span class="string">'^'</span>,STR_PAD_RIGHT);<span class="comment">//右边补充</span></div><div class="line"><span class="keyword">echo</span> $aa = str_pad($str,<span class="number">18</span>,<span class="string">'^'</span>,STR_PAD_BOTH);<span class="comment">//两边补充</span></div></pre></td></tr></table></figure>
+<p>输出结果：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">hehenihao^^^^^^^^^</div><div class="line">^^^^hehenihao^^^^^</div></pre></td></tr></table></figure>
+</li>
+<li><p><code>str_repeat</code>：重复一个字符串</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">echo</span> str_repeat(<span class="string">'^'</span>,<span class="number">9</span>);<span class="comment">//重复的字符串，重复几个；</span></div></pre></td></tr></table></figure>
+<p>输出结果：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">^^^^^^^^^</div></pre></td></tr></table></figure>
+</li>
+<li><p><code>strrev</code>：反转字符串</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$str = <span class="string">'hehenihao'</span>;</div><div class="line"><span class="keyword">echo</span> strrev($str);</div></pre></td></tr></table></figure>
+<p>输出结果：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">oahineheh</div></pre></td></tr></table></figure>
+</li>
+<li><p><code>explode</code>：使用一个字符串分割另一个字符串</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$str = <span class="string">'aa..bb..cc..dd'</span>;</div><div class="line">print_r(explode(<span class="string">'.'</span>,$str));</div><div class="line">print_r(explode(<span class="string">'..'</span>,$str));</div></pre></td></tr></table></figure>
+<p>输出结果：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">Array</span></div><div class="line">(</div><div class="line">    [<span class="number">0</span>] =&gt; aa</div><div class="line">    [<span class="number">1</span>] =&gt; </div><div class="line">    [<span class="number">2</span>] =&gt; bb</div><div class="line">    [<span class="number">3</span>] =&gt; </div><div class="line">    [<span class="number">4</span>] =&gt; cc</div><div class="line">    [<span class="number">5</span>] =&gt; </div><div class="line">    [<span class="number">6</span>] =&gt; dd</div><div class="line">)</div><div class="line"></div><div class="line"><span class="keyword">Array</span></div><div class="line">(</div><div class="line">    [<span class="number">0</span>] =&gt; aa</div><div class="line">    [<span class="number">1</span>] =&gt; bb</div><div class="line">    [<span class="number">2</span>] =&gt; cc</div><div class="line">    [<span class="number">3</span>] =&gt; dd</div><div class="line">)</div></pre></td></tr></table></figure>
+</li>
+<li><p><code>implode</code>：将一个一维数组的值转化为字符串</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$arr = <span class="keyword">array</span>(<span class="string">'阳光'</span>,<span class="string">'蓝天'</span>,<span class="string">'喜欢'</span>,<span class="string">'声音'</span>,<span class="string">'感动'</span>);</div><div class="line"><span class="keyword">echo</span> implode($arr,<span class="string">'，'</span>);</div></pre></td></tr></table></figure>
+<p>输出结果：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">阳光，蓝天，喜欢，声音，感动</div></pre></td></tr></table></figure>
+</li>
+<li><p><code>str_replace</code>：字符串替换操作</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$str = <span class="string">'左岸15°'</span>;</div><div class="line"><span class="keyword">echo</span> str_replace(<span class="string">'°'</span>,<span class="string">'度'</span>,$str);</div></pre></td></tr></table></figure>
+<p>输出结果：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">左岸<span class="number">15</span>度</div></pre></td></tr></table></figure>
+</li>
+<li><p><code>substr</code>：截取字符串</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">echo</span> substr(<span class="string">'you are my sunshine'</span>,<span class="number">8</span>,<span class="number">2</span>);<span class="comment">//第8个开始，向后截取2个</span></div><div class="line"><span class="keyword">echo</span> substr(<span class="string">'you are my sunshine'</span>,<span class="number">-8</span>,<span class="number">8</span>);<span class="comment">//倒数开始，向后截取8个</span></div><div class="line"><span class="keyword">echo</span> substr(<span class="string">'dushimanyou'</span>,<span class="number">6</span>);<span class="comment">//截取后6个</span></div></pre></td></tr></table></figure>
+<p>输出结果：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">my</div><div class="line">sunshine</div><div class="line">anyou</div></pre></td></tr></table></figure>
+</li>
+<li><p><code>substr_replace</code>：替换字符串中某串为另一个字符串</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">echo</span> substr_replace(<span class="string">'0123456789'</span>,<span class="string">'呵呵'</span>,<span class="number">3</span>,<span class="number">5</span>);<span class="comment">//第三个开始数，五个都替换为某字符串；</span></div></pre></td></tr></table></figure>
+<p>输出结果：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="number">012</span>呵呵<span class="number">89</span></div></pre></td></tr></table></figure>
+</li>
+<li><p><code>strstr</code>：返回一个字符串在另一个字符串中开始位置到结束的字符串</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">echo</span> strstr(<span class="string">'lantiandeshengyindeshuxi'</span>,<span class="string">'de'</span>);</div></pre></td></tr></table></figure>
+<p>输出结果：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">deshengyindeshuxi</div></pre></td></tr></table></figure>
+</li>
+<li><p><code>strrchr</code>：返回一个字符串在另一个字符串中最后一次出现位置开始到末尾的字符串</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">echo</span> strrchr(<span class="string">'lantiandeshengyindeshuxi'</span>,<span class="string">'de'</span>);</div></pre></td></tr></table></figure>
+<p>输出结果：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">deshuxi</div></pre></td></tr></table></figure>
+</li>
+<li><p><code>strpos</code>：寻找字符串中某字符最先出现的位置</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">print_r(strpos(<span class="string">'chengshidexuanxiao'</span>,<span class="string">'d'</span>));</div></pre></td></tr></table></figure>
+<p>输出结果：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="number">8</span></div></pre></td></tr></table></figure>
+</li>
+<li><p><code>strrpos</code>：寻找字符串中某字符最后出现的位置</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">print_r(strrpos(<span class="string">'chengshideshuinidegushi'</span>,<span class="string">'d'</span>));</div></pre></td></tr></table></figure>
+<p>输出结果：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="number">16</span></div></pre></td></tr></table></figure>
+</li>
+<li><p><code>substr_count</code>：计算字符串出现的出现次数</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">echo</span> substr_count(<span class="string">'happygirlsredapple'</span>,<span class="string">'a'</span>);</div></pre></td></tr></table></figure>
+<p>输出结果：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="number">2</span></div></pre></td></tr></table></figure>
+</li>
+<li><p><code>chunk_split</code>：将字符串分割成小块</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$str = <span class="string">'redapplehelloworld'</span>;</div><div class="line">$strs = chunk_split($str,<span class="number">4</span>,<span class="string">'/'</span>);<span class="comment">//每4位分割，用/分割</span></div><div class="line"><span class="keyword">echo</span> $strs;</div></pre></td></tr></table></figure>
+<p>输出结果：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">reda/pple/hell/owor/ld/</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>呼呼(～ o ～)~zZ……暂时就到这里吧，宝宝有点累了。话说，周六做了几个仰卧起坐（虽然只成功了一个，但是宝宝很努力），导致周日和周一小腹疼。不能笑，不能咳嗽，不能打喷嚏……So，表骂我哦，否则宝宝会哭给你看……</p>
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      <a href="/2016/12/12/funs/" class="archive-article-date">
+  	<time datetime="2016-12-12T02:37:56.000Z" itemprop="datePublished"><i class="icon-clock"></i>2016-12-12</time>
+</a>
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags"></i>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/PHP/">PHP</a></li></ul>
+	</div>
+
+      
+
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/2017/04/26/ci-crud/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          CI框架之--增删改查
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/12/08/isset-empty/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">浅析isset、empty和is_null的区别</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+
+
+<div class="share_jia">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">Share to: &nbsp; </span>
+		<a class="jiathis_button_facebook"></a> 
+	    <a class="jiathis_button_twitter"></a>
+	    <a class="jiathis_button_plus"></a> 
+	    <a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+    <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="//v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="funs" data-title="常用的PHP函数小总结" data-url="http://yoursite.com/2016/12/12/funs/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"autumnt"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+      </div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2017 Autumn
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    <script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: false,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false,
+		root: "/",
+		innerArchive: true
+	}
+</script>
+
+<script src="/./main.js"></script>
+
+
+    
+<div class="tools-col">
+  <ul class="btn-wrap">
+    
+      <li class="chose" data-hook="tools-section-all"><span class="text">全部</span><i class="icon-book"></i></li>
+    
+    
+      <li data-hook="tools-section-tag"><span class="text">标签</span><i class="icon-price-tags"></i></li>
+    
+    
+      <li data-hook="tools-section-friends"><span class="text">友链</span><i class="icon-link"></i></li>
+    
+    
+      <li data-hook="tools-section-me"><span class="text">我</span><i class="icon-smile"></i></li>
+    
+  </ul>
+  <div class="tools-wrap">
+    
+    	<section class="tools-section tools-section-all chose">
+    	</section>
+    
+
+    
+    	<section class="tools-section tools-section-tag">
+    			<div class="widget tagcloud" id="js-tagcloud">
+    				<a href="/tags/CI/" style="font-size: 10px;">CI</a> <a href="/tags/HEXO/" style="font-size: 15px;">HEXO</a> <a href="/tags/PHP/" style="font-size: 20px;">PHP</a> <a href="/tags/js/" style="font-size: 10px;">js</a>
+    			</div>
+    	</section>
+    
+
+    
+    	<section class="tools-section tools-section-friends">
+  		
+  			<div class="friends-wrap" id="js-friends">
+  			
+  	          <a target="_blank" class="main-nav-link switch-friends-link" href="https://tianyf159.github.io">乀莫名So</a>
+  	        
+  	          <a target="_blank" class="main-nav-link switch-friends-link" href="https://xtuer.github.io">公孙二狗</a>
+  	        
+  	          <a target="_blank" class="main-nav-link switch-friends-link" href="https://gaofeng0527.github.io">墨月之城</a>
+  	        
+  	        </div>
+  		
+    	</section>
+    
+
+    
+    	<section class="tools-section tools-section-me">
+  	  	
+  	  		<div class="aboutme-wrap" id="js-aboutme">你轻盈从身边走过香风缭绕&lt;br&gt;&lt;br&gt;这条裙子显出你身姿的曼妙&lt;br&gt;&lt;br&gt;你踏上电动扶梯我紧跟了上去&lt;br&gt;&lt;br&gt;你听着音乐不经意的莞尔一笑&lt;br&gt;&lt;br&gt;我的神魂顿时比宁采臣还要颠倒&lt;br&gt;&lt;br&gt;神农尝百草，别问饱不饱&lt;br&gt;&lt;br&gt;你对我的单身症好像有奇效&lt;br&gt;&lt;br&gt;落地窗外的夜色引人想入非非&lt;br&gt;&lt;br&gt;什么是非非，心已经飞飞&lt;br&gt;&lt;br&gt;你是中心，我是圆规那条勤劳的腿&lt;br&gt;&lt;br&gt;你是中心，我是圆规那条勤劳的腿&lt;br&gt;&lt;br&gt;三百六十度，在你周围，静静的看着你无死角的美&lt;br&gt;&lt;br&gt;你看书还是看我&lt;br&gt;&lt;br&gt;眼神里求知欲多&lt;br&gt;&lt;br&gt;心里燃起了焰火&lt;br&gt;&lt;br&gt;想说什么就勇敢说&lt;br&gt;&lt;br&gt;有时间还要再来多买多买一些书籍&lt;br&gt;&lt;br&gt;书中搞不好没有黄金屋，千钟粟，颜如玉&lt;br&gt;&lt;br&gt;可书店，有你啊&lt;br&gt;&lt;br&gt;有你，你是美好地</div>
+  	  	
+    	</section>
+    
+  </div>
+  
+</div>
+    <!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" style="display:none" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+  </div>
+</body>
+</html>
