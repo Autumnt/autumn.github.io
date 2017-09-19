@@ -14,7 +14,7 @@
 <meta property="og:url" content="http://yoursite.com/2017/09/19/excel/index.html">
 <meta property="og:site_name" content="谦与谦寻">
 <meta property="og:description" content="前段时间，因为业务需求，经常要导出学生数据信息。鉴于是基于YII框架，各种引用文件的开发，故写一个PHP版本的，不基于任何框架都可以的导出Excel文件功能。">
-<meta property="og:updated_time" content="2017-09-19T06:51:51.560Z">
+<meta property="og:updated_time" content="2017-09-19T06:56:04.301Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="PHP导出Excel文件">
 <meta name="twitter:description" content="前段时间，因为业务需求，经常要导出学生数据信息。鉴于是基于YII框架，各种引用文件的开发，故写一个PHP版本的，不基于任何框架都可以的导出Excel文件功能。">
@@ -169,13 +169,19 @@
 </li>
 <li><p>设置<code>Excel</code>的表格单元信息(导入表格的数据<code>$data</code>数组)：</p>
 <figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">foreach</span>($data <span class="keyword">as</span> $v)</div><div class="line">&#123;</div><div class="line">    $content.= <span class="string">"&lt;tr&gt;"</span>;</div><div class="line">    $content.= <span class="string">"&lt;td width='150' align='center'&gt;&#123;$v['name']&#125;&lt;/td&gt;"</span>;</div><div class="line">    $content.= <span class="string">"&lt;td width='250' align='center'"</span>;</div><div class="line">    $content.= <span class="string">" style='vnd.ms-excel.numberformat:@'&gt;&#123;$v['age']&#125;&lt;/td&gt;"</span>;</div><div class="line">    $content.= <span class="string">"&lt;td width='150' align='center'"</span>;</div><div class="line">    $content.= <span class="string">" style='vnd.ms-excel.numberformat:@'&gt;&#123;$v['course']&#125;&lt;/td&gt;"</span>;</div><div class="line">    $content.= <span class="string">"&lt;/tr&gt;"</span>;</div><div class="line">&#125;</div><div class="line">$content.= <span class="string">"&lt;/table&gt;"</span>;</div><div class="line"><span class="keyword">echo</span> $content;</div><div class="line"><span class="keyword">exit</span>;</div></pre></td></tr></table></figure>
+<p>​</p>
 </li>
 <li><p>备注：</p>
 <ul>
-<li><code>style=&#39;vnd.ms-excel.numberformat:@&#39;</code> ：能避免对纯数字的表格进行科学计数法。</li>
-<li><code>iconv(&#39;UTF-8&#39;, &#39;GBK&#39;, &#39;姓名&#39;)</code> ：因为<code>Windows</code>平台的文件名编码为<code>gb2312(gbk)</code>，若导出文件出现乱码，可用此方法进行转码操作。</li>
-<li><code>align=&#39;center&#39;</code>：表格内容居中显示。</li>
-<li><code>width=&#39;250&#39;</code> ：设定表格宽度，避免显示不完全。</li>
+<li><p><code>style=&#39;vnd.ms-excel.numberformat:@&#39;</code> ：能避免对纯数字的表格进行科学计数法。</p>
+</li>
+<li><p><code>iconv(&#39;UTF-8&#39;, &#39;GBK&#39;, &#39;姓名&#39;)</code> ：因为<code>Windows</code>平台的文件名编码为<code>gb2312(gbk)</code>，若导出文件出现乱码，可用此方法进行转码操作。</p>
+</li>
+<li><p><code>align=&#39;center&#39;</code>：表格内容居中显示。</p>
+</li>
+<li><p><code>width=&#39;250&#39;</code> ：设定表格宽度，避免显示不完全。</p>
+<p>​</p>
+</li>
 </ul>
 </li>
 </ul>
