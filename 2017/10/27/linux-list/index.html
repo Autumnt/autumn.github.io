@@ -6,18 +6,15 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>PHP导出Excel文件 | 谦与谦寻</title>
+  <title>linux-list | 谦与谦寻</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="前段时间，因为业务需求，经常要导出学生数据信息。鉴于是基于YII框架，各种引用文件的开发，故写一个PHP版本的，不基于任何框架都可以的导出Excel文件功能。">
-<meta property="og:type" content="article">
-<meta property="og:title" content="PHP导出Excel文件">
-<meta property="og:url" content="http://yoursite.com/2017/09/19/excel/index.html">
+  <meta property="og:type" content="article">
+<meta property="og:title" content="linux-list">
+<meta property="og:url" content="http://yoursite.com/2017/10/27/linux-list/index.html">
 <meta property="og:site_name" content="谦与谦寻">
-<meta property="og:description" content="前段时间，因为业务需求，经常要导出学生数据信息。鉴于是基于YII框架，各种引用文件的开发，故写一个PHP版本的，不基于任何框架都可以的导出Excel文件功能。">
-<meta property="og:updated_time" content="2017-09-19T06:56:04.301Z">
+<meta property="og:updated_time" content="2017-10-27T07:00:51.405Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="PHP导出Excel文件">
-<meta name="twitter:description" content="前段时间，因为业务需求，经常要导出学生数据信息。鉴于是基于YII框架，各种引用文件的开发，故写一个PHP版本的，不基于任何框架都可以的导出Excel文件功能。">
+<meta name="twitter:title" content="linux-list">
   
     <link rel="alternative" href="/atom.xml" title="谦与谦寻" type="application/atom+xml">
   
@@ -137,7 +134,7 @@
 </nav>
 
       <div class="body-wrap">
-        <article id="post-excel" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-linux-list" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <input type="hidden" class="isFancy" />
@@ -147,7 +144,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      PHP导出Excel文件
+      linux-list
     </h1>
   
 
@@ -155,51 +152,15 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <script src="/assets/js/APlayer.min.js"> </script><p>前段时间，因为业务需求，经常要导出学生数据信息。鉴于是基于<code>YII</code>框架，各种引用文件的开发，故写一个<code>PHP</code>版本的，不基于任何框架都可以的导出<code>Excel</code>文件功能。</p>
-<a id="more"></a>
-<ul>
-<li><p>首先准备一个数组(用于储存导入<code>Excel</code>表格的数据)：</p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">$data = <span class="keyword">array</span>(</div><div class="line">    <span class="keyword">array</span>(<span class="string">'name'</span>=&gt;<span class="string">'傅红雪'</span>,<span class="string">'age'</span>=&gt;<span class="string">'12'</span>,<span class="string">'course'</span>=&gt;<span class="string">'english'</span>),</div><div class="line">    <span class="keyword">array</span>(<span class="string">'name'</span>=&gt;<span class="string">'吻花落'</span>,<span class="string">'age'</span>=&gt;<span class="string">'18'</span>,<span class="string">'course'</span>=&gt;<span class="string">'math'</span>),</div><div class="line">    <span class="keyword">array</span>(<span class="string">'name'</span>=&gt;<span class="string">'封诗册'</span>,<span class="string">'age'</span>=&gt;<span class="string">'20'</span>,<span class="string">'course'</span>=&gt;<span class="string">'chymistry'</span>),</div><div class="line">    <span class="keyword">array</span>(<span class="string">'name'</span>=&gt;<span class="string">'爱一抹'</span>,<span class="string">'age'</span>=&gt;<span class="string">'25'</span>,<span class="string">'course'</span>=&gt;<span class="string">'history'</span>),</div><div class="line">);</div></pre></td></tr></table></figure>
-</li>
-<li><p>设置向客户端发送原始的 HTTP 报头：</p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">header(<span class="string">"Content-Type: application/vnd.ms-excel;charset=gbk"</span>);</div><div class="line">header(<span class="string">"Content-Disposition: attachment; filename=test.xls"</span>);</div><div class="line">header(<span class="string">"Pragma: no-cache; Expires: 0"</span>);</div></pre></td></tr></table></figure>
-</li>
-<li><p>设置<code>Excel</code>的表格单元信息：</p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$content = <span class="string">"&lt;table border='1'&gt;&lt;tr&gt;"</span>;</div><div class="line">$content.= <span class="string">"&lt;td align='center'&gt;姓名&lt;/td&gt;"</span>;</div><div class="line">$content.= <span class="string">"&lt;td align='center'&gt;年龄&lt;/td&gt;"</span>;</div><div class="line">$content.= <span class="string">"&lt;td align='center'&gt;课程&lt;/td&gt;&lt;/tr&gt;"</span>;</div></pre></td></tr></table></figure>
-</li>
-<li><p>设置<code>Excel</code>的表格单元信息(导入表格的数据<code>$data</code>数组)：</p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">foreach</span>($data <span class="keyword">as</span> $v)</div><div class="line">&#123;</div><div class="line">    $content.= <span class="string">"&lt;tr&gt;"</span>;</div><div class="line">    $content.= <span class="string">"&lt;td width='150' align='center'&gt;&#123;$v['name']&#125;&lt;/td&gt;"</span>;</div><div class="line">    $content.= <span class="string">"&lt;td width='250' align='center'"</span>;</div><div class="line">    $content.= <span class="string">" style='vnd.ms-excel.numberformat:@'&gt;&#123;$v['age']&#125;&lt;/td&gt;"</span>;</div><div class="line">    $content.= <span class="string">"&lt;td width='150' align='center'"</span>;</div><div class="line">    $content.= <span class="string">" style='vnd.ms-excel.numberformat:@'&gt;&#123;$v['course']&#125;&lt;/td&gt;"</span>;</div><div class="line">    $content.= <span class="string">"&lt;/tr&gt;"</span>;</div><div class="line">&#125;</div><div class="line">$content.= <span class="string">"&lt;/table&gt;"</span>;</div><div class="line"><span class="keyword">echo</span> $content;</div><div class="line"><span class="keyword">exit</span>;</div></pre></td></tr></table></figure>
-<p>​</p>
-</li>
-<li><p>备注：</p>
-<ul>
-<li><p><code>style=&#39;vnd.ms-excel.numberformat:@&#39;</code> ：能避免对纯数字的表格进行科学计数法。</p>
-</li>
-<li><p><code>iconv(&#39;UTF-8&#39;, &#39;GBK&#39;, &#39;姓名&#39;)</code> ：因为<code>Windows</code>平台的文件名编码为<code>gb2312(gbk)</code>，若导出文件出现乱码，可用此方法进行转码操作。</p>
-</li>
-<li><p><code>align=&#39;center&#39;</code>：表格内容居中显示。</p>
-</li>
-<li><p><code>width=&#39;250&#39;</code> ：设定表格宽度，避免显示不完全。</p>
-<p>​</p>
-</li>
-</ul>
-</li>
-</ul>
-<p>恩~，至于为啥不写基于框架的导出，就我个人认为，应该是觉得各种引入文件，阅读起来比较麻烦，毕竟不是一个专门针对某框架开发的文档。恩，一定是这样的，一定不是因为我懒！<code>ps</code> ：​:cry:​我又胖了……</p>
-
+        <script src="/assets/js/APlayer.min.js"> </script>
       
     </div>
     <div class="article-info article-info-index">
       
-      <a href="/2017/09/19/excel/" class="archive-article-date">
-  	<time datetime="2017-09-19T02:28:25.000Z" itemprop="datePublished"><i class="icon-clock"></i>2017-09-19</time>
+      <a href="/2017/10/27/linux-list/" class="archive-article-date">
+  	<time datetime="2017-10-27T06:57:45.000Z" itemprop="datePublished"><i class="icon-clock"></i>2017-10-27</time>
 </a>
       
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/EXCEL/">EXCEL</a></li></ul>
-	</div>
-
       
 
       <div class="clearfix"></div>
@@ -210,18 +171,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2017/10/27/linux-list/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          linux-list
-        
-      </div>
-    </a>
   
-  
-    <a href="/2017/05/08/ci-delete/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">CI框架之--当Delete碰上Ajax</div>
+    <a href="/2017/09/19/excel/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">PHP导出Excel文件</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -255,7 +207,7 @@
 
 <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="excel" data-title="PHP导出Excel文件" data-url="http://yoursite.com/2017/09/19/excel/"></div>
+	<div class="ds-thread" data-thread-key="linux-list" data-title="linux-list" data-url="http://yoursite.com/2017/10/27/linux-list/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
