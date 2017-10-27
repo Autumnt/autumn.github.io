@@ -8,13 +8,16 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>浅析Linux中常用目录的作用 | 谦与谦寻</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="article">
+  <meta name="description" content="Linux的一些常用的基本命令我们是经常敲，可是我始终没有研究过其目录结构，只是知道一些简单常用的。今天，就深扒一下他的隐私吧……ε＝ε＝ε＝(#&amp;gt;д&amp;lt;)ﾉ">
+<meta property="og:type" content="article">
 <meta property="og:title" content="浅析Linux中常用目录的作用">
 <meta property="og:url" content="http://yoursite.com/2017/10/27/linux-list/index.html">
 <meta property="og:site_name" content="谦与谦寻">
-<meta property="og:updated_time" content="2017-10-27T07:02:37.873Z">
+<meta property="og:description" content="Linux的一些常用的基本命令我们是经常敲，可是我始终没有研究过其目录结构，只是知道一些简单常用的。今天，就深扒一下他的隐私吧……ε＝ε＝ε＝(#&amp;gt;д&amp;lt;)ﾉ">
+<meta property="og:updated_time" content="2017-10-27T07:04:55.618Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="浅析Linux中常用目录的作用">
+<meta name="twitter:description" content="Linux的一些常用的基本命令我们是经常敲，可是我始终没有研究过其目录结构，只是知道一些简单常用的。今天，就深扒一下他的隐私吧……ε＝ε＝ε＝(#&amp;gt;д&amp;lt;)ﾉ">
   
     <link rel="alternative" href="/atom.xml" title="谦与谦寻" type="application/atom+xml">
   
@@ -152,7 +155,36 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <script src="/assets/js/APlayer.min.js"> </script>
+        <script src="/assets/js/APlayer.min.js"> </script><p><code>Linux</code>的一些常用的基本命令我们是经常敲，可是我始终没有研究过其目录结构，只是知道一些简单常用的。今天，就深扒一下他的隐私吧……ε＝ε＝ε＝(#&gt;д&lt;)ﾉ</p>
+<a id="more"></a>
+<ul>
+<li><code>/bin</code>：存放使用者最长用的命令，如：<code>cp</code>、<code>ls</code>、<code>cat</code>，等等。 </li>
+<li><code>/boot</code>：启动<code>Linux</code>时使用的一些核心文件。 </li>
+<li><code>/dev</code>：是<code>device</code>(设备)的缩写，这个目录下是所有<code>Linux</code>的外围设备。</li>
+<li><code>/etc</code>：这个目录用来存放系统管理所需要的配置文件和子目录。 </li>
+<li><code>/home</code>：用户的主目录，比如说有个用户叫<code>lr</code>，那他的目录就是<code>/home/lr</code>也可以用<code>~lr</code>来表示。 </li>
+<li><code>/lib</code>：这个目录是存放着系统最基本的动态连接库，几乎所有的应用程序都须用这些共享库。</li>
+<li><code>/lost+found</code>：这个目录平时是空的，当系统不正常关机后，这里就是一些无家可归文件的避难所。 </li>
+<li><code>/mnt</code>：这个目录是空的，系统提供这个目录是让用户临时挂接别的文件系统。 </li>
+<li><code>/proc</code>：这个目录是一个虚拟目录，它是系统内存映射，我们可以直接通过访问这个目录来获取系统信息。也就是说，这个目录的内容不在硬盘上而是在内存中。 </li>
+<li><code>/root</code>：系统管理员（<code>root</code>）的主目录，作为系统的拥有者的特权。 </li>
+<li><code>/sbin</code>：<code>s</code>就是<code>super user</code>的意义，也就是说这里存放的是系统管理员使用的管理程序。</li>
+<li><code>/tmp</code>： 这个目录是存放一些临时文件的地方。 </li>
+<li><code>/usr</code>： 我们用到的应用程序的文件几乎都存放这个目录下：<ul>
+<li><code>/usr/X11R6</code> ：存放<code>X_Window</code>的目录；</li>
+<li><code>/usr/bin</code> ：存放着许多应用程序；</li>
+<li><code>/usr /sbin</code>：给超级用户使用的一些管理程序就放在这个里面；</li>
+<li><code>/usr/include</code>：开发和编译应用程序所需的头文件；</li>
+<li><code>/usr/lib</code>：存放一些常用的动态连接共享库和静态归档案库；</li>
+<li><code>/usr/local</code>：这是提供给一般用户的<code>/usr</code>目录，在这里安装软件最合适。</li>
+<li><code>/usr/man</code>：存放帮助文档。</li>
+<li><code>/usr /src</code>：开放的源代码就存在这个目录下。 </li>
+</ul>
+</li>
+<li><code>/var</code>：这个目录存放那些不断扩充的东西，为了保持<code>usr</code>的相对稳定，那些才、经常被修改的目录可以放在这个目录下，如<code>/var/log</code>日志文件。</li>
+</ul>
+<p>深扒之后，其实用的还是经常用的那几个。咦？我在说啥？不管了，就这么完了。今天破天荒的写了两篇干货，其实也就是最近有点“闲”，就写了，当然啦，肯定是这样的，才不是我懒！💔</p>
+
       
     </div>
     <div class="article-info article-info-index">
@@ -161,6 +193,11 @@
   	<time datetime="2017-10-27T06:57:45.000Z" itemprop="datePublished"><i class="icon-clock"></i>2017-10-27</time>
 </a>
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags"></i>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/LINUX/">LINUX</a></li></ul>
+	</div>
+
       
 
       <div class="clearfix"></div>
@@ -285,7 +322,7 @@
     
     	<section class="tools-section tools-section-tag">
     			<div class="widget tagcloud" id="js-tagcloud">
-    				<a href="/tags/AJAX/" style="font-size: 10px;">AJAX</a> <a href="/tags/CI/" style="font-size: 15px;">CI</a> <a href="/tags/EXCEL/" style="font-size: 10px;">EXCEL</a> <a href="/tags/HEXO/" style="font-size: 15px;">HEXO</a> <a href="/tags/PHP/" style="font-size: 20px;">PHP</a> <a href="/tags/js/" style="font-size: 10px;">js</a>
+    				<a href="/tags/AJAX/" style="font-size: 10px;">AJAX</a> <a href="/tags/CI/" style="font-size: 15px;">CI</a> <a href="/tags/EXCEL/" style="font-size: 10px;">EXCEL</a> <a href="/tags/HEXO/" style="font-size: 15px;">HEXO</a> <a href="/tags/LINUX/" style="font-size: 10px;">LINUX</a> <a href="/tags/PHP/" style="font-size: 20px;">PHP</a> <a href="/tags/js/" style="font-size: 10px;">js</a>
     			</div>
     	</section>
     
