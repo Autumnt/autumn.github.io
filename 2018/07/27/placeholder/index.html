@@ -6,14 +6,27 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2017/10 | Autumn</title>
+  <title>如何动态修改 placeholder 的颜色？ | Autumn</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Autumn">
-<meta property="og:url" content="http://yoursite.com/archives/2017/10/index.html">
+  <meta name="description" content="时隔今日，是什么让我又想起了我亲爱的博客？是爱么？是良心发现么？No~~还不是因为我是一个有责任感的人，吼吼 ~~ 敲黑板，3~2~1~：爱就像蓝天白云，晴空万里，突然暴风雨 ~~哈哈哈哈，偶尔小皮一下，言归正传：
+最近做项目的时候，遇到了这样一个问题：
+1&amp;lt;input type=&quot;text&quot; id=&quot;name&quot; name=&quot;name&quot; placeholder=&quot;请输入姓名&quot;&amp;gt;
+当用">
+<meta property="og:type" content="article">
+<meta property="og:title" content="如何动态修改 placeholder 的颜色？">
+<meta property="og:url" content="http://yoursite.com/2018/07/27/placeholder/index.html">
 <meta property="og:site_name" content="Autumn">
+<meta property="og:description" content="时隔今日，是什么让我又想起了我亲爱的博客？是爱么？是良心发现么？No~~还不是因为我是一个有责任感的人，吼吼 ~~ 敲黑板，3~2~1~：爱就像蓝天白云，晴空万里，突然暴风雨 ~~哈哈哈哈，偶尔小皮一下，言归正传：
+最近做项目的时候，遇到了这样一个问题：
+1&amp;lt;input type=&quot;text&quot; id=&quot;name&quot; name=&quot;name&quot; placeholder=&quot;请输入姓名&quot;&amp;gt;
+当用">
+<meta property="og:updated_time" content="2018-07-27T03:46:48.082Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Autumn">
+<meta name="twitter:title" content="如何动态修改 placeholder 的颜色？">
+<meta name="twitter:description" content="时隔今日，是什么让我又想起了我亲爱的博客？是爱么？是良心发现么？No~~还不是因为我是一个有责任感的人，吼吼 ~~ 敲黑板，3~2~1~：爱就像蓝天白云，晴空万里，突然暴风雨 ~~哈哈哈哈，偶尔小皮一下，言归正传：
+最近做项目的时候，遇到了这样一个问题：
+1&amp;lt;input type=&quot;text&quot; id=&quot;name&quot; name=&quot;name&quot; placeholder=&quot;请输入姓名&quot;&amp;gt;
+当用">
   
     <link rel="alternative" href="/atom.xml" title="Autumn" type="application/atom+xml">
   
@@ -137,54 +150,89 @@
 </nav>
 
       <div class="body-wrap">
+        <article id="post-placeholder" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
         
   
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/10/27/linux-list/" class="archive-article-date">
-  	<time datetime="2017-10-27T06:57:45.000Z" itemprop="datePublished"><i class="icon-clock"></i>2017-10-27</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/10/27/linux-list/">浅析Linux中常用目录的作用</a>
+    <h1 class="article-title" itemprop="name">
+      如何动态修改 placeholder 的颜色？
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <script src="/assets/js/APlayer.min.js"> </script><p>时隔今日，是什么让我又想起了我亲爱的博客？<del>是爱么？是良心发现么？<code>No</code></del>~~还不是因为我是一个有责任感的人，吼吼 ~~ 敲黑板，3~2~1~：爱就像蓝天白云，晴空万里，突然暴风雨 ~~哈哈哈哈，偶尔小皮一下，言归正传：</p>
+<p>最近做项目的时候，遇到了这样一个问题：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">id</span>=<span class="string">"name"</span> <span class="attr">name</span>=<span class="string">"name"</span> <span class="attr">placeholder</span>=<span class="string">"请输入姓名"</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>当用户输入错误的时候，<code>placeholder</code>内容颜色更改为红色；</p>
+<p>css代码如下：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.invalid</span><span class="selector-pseudo">:-moz-placeholder</span> &#123; <span class="comment">/* Mozilla Firefox 4 to 18 */</span></div><div class="line">    <span class="attribute">color</span>: red;  </div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="selector-class">.invalid</span><span class="selector-pseudo">::-moz-placeholder</span> &#123; <span class="comment">/* Mozilla Firefox 19+ */</span></div><div class="line">    <span class="attribute">color</span>: red;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="selector-tag">input</span><span class="selector-class">.invalid</span><span class="selector-pseudo">:-ms-input-placeholder</span>&#123;</div><div class="line">    <span class="attribute">color</span>: red;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="selector-tag">input</span><span class="selector-class">.invalid</span><span class="selector-pseudo">::-webkit-input-placeholder</span> &#123;</div><div class="line">    <span class="attribute">color</span>: red;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>用这些伪类就可以让<code>placeholder</code>变色了，你只需要在用户输错的时候，用<code>js</code>给<code>input</code>加上<code>invalid</code> <code>class</code>就行了，是不是超级简单咩 ~~</p>
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      <a href="/2018/07/27/placeholder/" class="archive-article-date">
+  	<time datetime="2018-07-27T03:33:37.000Z" itemprop="datePublished"><i class="icon-clock"></i>2018-07-27</time>
+</a>
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/LINUX/">LINUX</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/css-js/">css,js</a></li></ul>
 	</div>
 
-          
+      
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
-  
-  
-    </div></section>
-  
 
-    
+  
+<nav id="article-nav">
+  
+  
+    <a href="/2017/10/27/linux-list/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">浅析Linux中常用目录的作用</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+
+
+<div class="share_jia">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">Share to: &nbsp; </span>
+		<a class="jiathis_button_facebook"></a> 
+	    <a class="jiathis_button_twitter"></a>
+	    <a class="jiathis_button_plus"></a> 
+	    <a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+    <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="//v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+
+
+
 
 
       </div>
@@ -207,8 +255,8 @@
 		mathjax: false,
 		animate: true,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
